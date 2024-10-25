@@ -6,7 +6,7 @@ POSTGRES_CONTAINER="debezium-change-offset-postgres-1"
 # Команда для выполнения SQL-запроса
 SQL_QUERY="
 SELECT json_build_object(
-    'connector', regexp_replace(slot_name, '_slot$', ''),
+    'connector', regexp_replace(regexp_replace(slot_name, '_slot$', ''), '_', '-'),
     'server', 'dbserver1',
     'txId', catalog_xmin,
     'lsn_commit', ('0x' || split_part(restart_lsn::text, '/', 2))::float,
