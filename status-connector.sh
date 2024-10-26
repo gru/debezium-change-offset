@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./kafka-config.sh
+
 # Проверяем, передано ли имя коннектора
 if [ -z "$1" ]; then
   echo "Пожалуйста, укажите имя коннектора."
@@ -9,4 +11,4 @@ fi
 CONNECTOR_NAME=$1
 
 # Отправляем запрос на получение статуса коннектора
-curl -s -X GET http://localhost:8083/connectors/$CONNECTOR_NAME/status | jq
+curl -s -X GET "${KAFKA_CONNECT_URL}/connectors/${CONNECTOR_NAME}/status" | jq

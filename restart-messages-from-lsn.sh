@@ -17,11 +17,10 @@ CONNECTOR=$(echo $INPUT_JSON | jq -r '.connector')
 SERVER=$(echo $INPUT_JSON | jq -r '.server')
 TXID=$(echo $INPUT_JSON | jq -r '.txId')
 LSN_COMMIT=$(echo $INPUT_JSON | jq -r '.lsn_commit')
-LSN=$(echo $INPUT_JSON | jq -r '.lsn')
 
 # Формируем KEY и VALUE
 KEY="[\"$CONNECTOR\",{\"server\":\"$SERVER\"}]"
-VALUE="{\"transaction_id\":null,\"lsn_proc\":$LSN,\"lsn_commit\":$LSN_COMMIT,\"lsn\":$LSN,\"txId\":$TXID,\"ts_usec\":$CURRENT_TS_USEC}"
+VALUE="{\"transaction_id\":null,\"lsn_proc\":$LSN_COMMIT,\"lsn_commit\":$LSN_COMMIT,\"lsn\":$LSN_COMMIT,\"txId\":$TXID,\"ts_usec\":$CURRENT_TS_USEC}"
 
 # Имя топика
 TOPIC="connect_offsets"

@@ -19,7 +19,6 @@ while read -r line; do
             "connector": .[0][0],
             "server": .[0][1].server,
             "txId": .[1].txId,
-            "lsn": .[1].lsn,
             "lsn_commit": .[1].lsn_commit,
             "ts_usec": .[1].ts_usec
         }'

@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Конфигурация
-KAFKA_CONNECT_URL="http://localhost:8083"  # Замените на фактический URL вашего Kafka Connect
+source ./kafka-config.sh
 
 # Получение списка всех коннекторов
 connectors=$(curl -s -X GET "${KAFKA_CONNECT_URL}/connectors")

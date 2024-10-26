@@ -1,2 +1,2 @@
-  {"connector" : "outbox-connector", "server" : "dbserver1", "txId" : "552", "lsn_commit" : 24126992, "lsn" : 24139720}
+  {"connector" : "outbox-connector", "server" : "dbserver1", "txId" : "568", "lsn_commit" : 24204776}
   
